@@ -1,0 +1,176 @@
+
+        //out:./css/index.css
+
+        body{
+            width: 100%;                 /* 占满整个宽度 */
+            height: 100%;                /* 占满整个高度 */
+            // background: #f0f0f0;        /* 页面背景色 */
+            // background-image: url(../images/background.png),
+            // linear-gradient(to bottom, #d12525, #eb929268);
+            background: linear-gradient(to bottom, #d12525, #eb929268);
+            margin: 0;                    /* 去掉默认外边距 */
+            height: 100vh;                /* 占满整个视口高度 */
+            display: flex;                /* 使用 flex 布局 */
+            justify-content: center;      /* 水平居中 */
+            align-items: center;          /* 垂直居中 */
+            
+        }
+        
+        body::before{
+            content: "";
+            position: fixed;
+            inset: 0;                  /* top/right/bottom/left = 0 */    
+            background-image: url(../images/background.png);
+            animation:bac 5s infinite;
+        }
+        @keyframes bac {
+            0% {transform: translate(0,0)  }   
+            50% {  transform: translate(2vh,2vh)	 }   
+            100% { transform: translate(0,0) }   
+        }
+
+.allhead{
+    
+    width: 100%;
+    height: 20vh;
+    background-color: rgba(49, 35, 208, 0);
+//无序列表前小原点去除
+    list-style: none;
+    padding: 0;
+    margin: 0;
+//flex
+    display: flex;	
+    justify-content: space-around;		
+
+
+    perspective: 1000px;  
+      
+    
+        .cube {
+            width: 100px;
+            height: 100px;
+            position: relative;           
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg) rotateY(20deg);
+            transition: transform 0.1s linear;
+            //速度
+            animation:lal 100s cubic-bezier(0.7, 1, 1, 700) infinite;
+            @keyframes lal {
+                from {
+                    transform: rotateX(0deg) rotateY(0deg);
+                    
+                }
+                to {
+                    transform: rotateX(360deg) rotateY(360deg);
+                    
+                }
+            }
+            //字体
+            font-weight:1000;
+            font-size: 700px;
+
+            .face {
+                position: absolute;           
+                width: 100px;
+                height: 100px;
+                line-height: 100px;            
+                text-align: center;           
+                font-size: 22px;
+                background: rgba(255, 0, 25, 0.6);
+                border: 1px solid rgb(8, 8, 8);
+                &.front  { transform: translateZ(50px); }
+                &.back   { transform: rotateY(180deg) translateZ(50px); }
+                &.left   { transform: rotateY(-90deg) translateZ(50px); }
+                &.right  { transform: rotateY(90deg) translateZ(50px); }
+                &.top    { transform: rotateX(90deg) translateZ(50px); }
+                &.bottom { transform: rotateX(-90deg) translateZ(50px); }           
+            }                 
+        
+    }
+}
+
+.horse{
+    width:100% ;
+    height:500px ;
+    background-image: url(../images/horse.png);
+    background-position: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;  
+    background-repeat: no-repeat;      /* 不平铺 */
+    background-size: contain;          /* 完整显示图片 */
+    background-position: center center;/* 水平 + 垂直居中 */
+}
+.letter{
+    background-image: url(../images/letter.png);
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    position: fixed;
+    right: 550px;
+    bottom: 320px;
+    background-repeat: no-repeat;      /* 不平铺 */
+    background-size: contain;          /* 完整显示图片 */
+    animation: le 1s cubic-bezier(0.2, 0.5, 1, 1) forwards ;
+    
+}
+//信封放大
+@keyframes le {
+    from {
+        
+        transform: scale(0.1);	
+    }
+    to {
+        
+        transform: scale(1);	
+    }
+}
+
+.balloon{
+    background-image: url("../images/red.png");
+    width:500px ;
+    height:500px ;
+    left:200px ;
+    top:100px ;
+    // background-color: #fff;
+    background-position: center;
+    position: fixed;
+    background-repeat: no-repeat;      /* 不平铺 */
+    background-size: contain;          /* 完整显示图片 */
+
+    
+    animation: bb 100s cubic-bezier(0.7, 10, 1, 700) infinite;
+}
+
+//气球飘
+@keyframes bb {
+    from {
+        transform: translate(0,0);
+    }
+    to {
+        transform: translate(10vw,-30vh);
+    }
+}
+
+.lantern{
+    background-color: #ffffff00;
+    width:300px ;
+    height:300px ;
+    background-image: url(../images/lantern.png);
+    background-position: center;
+    position: fixed;
+    top: 0;
+    background-repeat: no-repeat;      /* 不平铺 */
+    background-size: contain;          /* 完整显示图片 */
+    
+    &.left{
+        left: -100px;  
+        top: -80px;;
+       
+    }
+    &.right{
+        right: -100px; 
+        top:-80px; 
+        transform: scaleX(-1);
+    }
+}
