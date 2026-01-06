@@ -1,0 +1,257 @@
+body .box1 {
+  width: 70vw;
+  height: 60vh;
+  background-color: rgba(0, 255, 255, 0);
+  position: fixed;
+  top: 10vh;
+  left: 15vw;
+  position: relative;
+}
+body .box1 .left {
+  position: absolute;
+  width: 5vw;
+  height: 60vh;
+  background-color: #b5363600;
+  border: 0.5vh solid #000000;
+  border-radius: 30vh;
+}
+body .box1 .left .power-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .box1 .left .power {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(red, white);
+  border-radius: 30vh;
+}
+@keyframes power_up {
+  from {
+    height: 0;
+  }
+  to {
+    height: 60vh;
+  }
+}
+body .box1 .left .up {
+  animation: power_up 0.5s forwards;
+}
+body .box1 .right {
+  position: absolute;
+  width: 64.5vw;
+  height: 60vh;
+  background-color: #1f07b900;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .box1 .right .award {
+  position: absolute;
+  width: 30vw;
+  height: 10vh;
+  background-color: #d510df00;
+  top: 0px;
+  left: 17vw;
+}
+body .box1 .right .award .aw {
+  position: absolute;
+  top: 3vh;
+  left: 13vw;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #e70606;
+  /* 金色 */
+  /* 金色发光（核心） */
+  text-shadow: 0 0 4px #FFD700, 0 0 8px #FFD700, 0 0 16px rgba(255, 215, 0, 0.8), 0 0 32px rgba(255, 215, 0, 0.6);
+  /* 高级感字体抗锯齿 */
+  -webkit-font-smoothing: antialiased;
+  /* 闪亮动画 */
+  animation: shine 1.8s ease-in-out infinite;
+}
+@keyframes shine {
+  0% {
+    opacity: 0.85;
+    text-shadow: 0 0 4px #FFD700, 0 0 10px rgba(255, 215, 0, 0.8);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 8px #FFF3B0, 0 0 18px #FFD700, 0 0 36px #ffd700;
+  }
+  100% {
+    opacity: 0.85;
+    text-shadow: 0 0 4px #FFD700, 0 0 10px rgba(255, 215, 0, 0.8);
+  }
+}
+body .box1 .right .want {
+  z-index: 20;
+  width: 30vw;
+  height: 33vh;
+  background-color: #10a49800;
+  position: relative;
+}
+body .box1 .right .want .one {
+  position: absolute;
+  width: 3vw;
+  height: 6vh;
+  background-color: #db1a1a00;
+  top: 87px;
+  left: 170px;
+}
+body .box1 .right .want .one .aa {
+  font-weight: 700;
+}
+body .box1 .right .want .two {
+  position: absolute;
+  width: 3vw;
+  height: 6vh;
+  background-color: #db1a1a00;
+  top: 50px;
+  left: 230px;
+}
+body .box1 .right .want .two .bb {
+  font-weight: 700;
+}
+body .box1 .right .want .three {
+  position: absolute;
+  width: 3vw;
+  height: 6vh;
+  background-color: #db1a1a00;
+  top: 87px;
+  right: 170px;
+}
+body .box1 .right .want .three .cc {
+  font-weight: 700;
+}
+body .box1 .right .want .four {
+  position: absolute;
+  width: 3vw;
+  height: 6vh;
+  background-color: #8d7a7a00;
+  bottom: 87px;
+  left: 170px;
+}
+body .box1 .right .want .four .dd {
+  font-weight: 700;
+}
+body .box1 .right .want .five {
+  position: absolute;
+  width: 3vw;
+  height: 6vh;
+  background-color: #8d7a7a00;
+  bottom: 50px;
+  left: 230px;
+}
+body .box1 .right .want .five .ee {
+  font-weight: 700;
+}
+body .box1 .right .want .six {
+  position: absolute;
+  width: 3vw;
+  height: 6vh;
+  background-color: #8d7a7a00;
+  bottom: 87px;
+  right: 170px;
+}
+body .box1 .right .want .six .ff {
+  font-weight: 700;
+}
+body .box1 .right .kk {
+  z-index: 0;
+  width: 30vw;
+  height: 33vh;
+  background-color: #10a43000;
+  position: absolute;
+  background-image: url(../img/1.png);
+  background-repeat: no-repeat;
+  /* 不重复 */
+  background-position: center;
+  /* 居中显示 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .box1 .right .kk .arrow {
+  width: 5vw;
+  height: 5vh;
+  background-color: #778d5400;
+  position: absolute;
+  background-image: url(../img/arrow.png);
+  background-repeat: no-repeat;
+  /* 不重复 */
+  background-position: center;
+  /* 居中显示 */
+  background-size: contain;
+  /* 缩小完整显示 */
+}
+body .box1 .right .kk .rotate_a {
+  animation: rotate_go_a 2s ease forwards;
+}
+body .box1 .right .kk .rotate_b {
+  animation: rotate_go_b 2s ease forwards;
+}
+body .box1 .right .kk .rotate_c {
+  animation: rotate_go_c 2s ease forwards;
+}
+body .box1 .right .kk .rotate_d {
+  animation: rotate_go_d 2s ease forwards;
+}
+body .box1 .right .kk .rotate_e {
+  animation: rotate_go_e 2s ease forwards;
+}
+body .box1 .right .kk .rotate_f {
+  animation: rotate_go_f 2s ease forwards;
+}
+@keyframes rotate_go_a {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(3580deg);
+  }
+}
+@keyframes rotate_go_b {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(3650deg);
+  }
+}
+@keyframes rotate_go_c {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(3700deg);
+  }
+}
+@keyframes rotate_go_d {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(3520deg);
+  }
+}
+@keyframes rotate_go_e {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(3460deg);
+  }
+}
+@keyframes rotate_go_f {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(3400deg);
+  }
+}

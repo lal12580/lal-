@@ -1,0 +1,254 @@
+//out:../css/index.css
+//整体盒子在游览器中间
+body .box1{
+    width: 70vw;
+    height: 60vh;
+    background-color: rgba(0, 255, 255, 0);
+    //相对游览器是中间位置
+    position: fixed;
+    top:10vh;
+    left:15vw;
+    //它对于左右两个盒子是父
+    position: relative;
+    //左侧js控制的竖形
+    .left{
+        //胶囊壳子
+        position: absolute;
+        width: 5vw;
+        height: 60vh;
+        background-color: #b5363600;
+        border: 0.5vh solid  rgb(0, 0, 0);
+        border-radius:30vh;
+        //
+        .power-wrap {
+            position: relative;   
+            width: 100%;
+            height: 100%;
+        }
+        //默认样子
+        .power {
+            position: absolute;                     
+            bottom: 0;                              
+            left: 0;                                
+            width: 100%;
+            height: 0;
+            background: linear-gradient(red, white);
+            border-radius:30vh;
+        }
+        //左侧动画——用高度来限制动画变化
+        @keyframes power_up {
+            from { height: 0; }  
+            to { height: 60vh; }    
+        }
+        //用Js给power加了up才执行变化
+        .up {
+            animation: power_up 0.5s forwards;
+        }
+    }
+    //右侧的转盘
+    .right{
+        position: absolute;
+        width: 64.5vw;
+        height: 60vh;
+        background-color: #1f07b900;
+        right:0;
+        //flex让他们居中显示
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        //上面的中奖信息
+        .award{
+            position: absolute;
+            width: 30vw;
+            height: 10vh;
+            background-color: #d510df00;
+            top:0px;
+            left:17vw;
+           .aw{
+                position: absolute;
+                top: 3vh;
+                left: 13vw;
+
+                font-size: 28px;
+                font-weight: 900;
+                letter-spacing: 2px;
+
+                color: #e70606; /* 金色 */
+
+                /* 金色发光（核心） */
+                text-shadow:
+                    0 0 4px #FFD700,
+                    0 0 8px #FFD700,
+                    0 0 16px rgba(255, 215, 0, 0.8),
+                    0 0 32px rgba(255, 215, 0, 0.6);
+
+                /* 高级感字体抗锯齿 */
+                -webkit-font-smoothing: antialiased;
+
+                /* 闪亮动画 */
+                animation: shine 1.8s ease-in-out infinite;
+            }
+            @keyframes shine {
+                0% {
+                    opacity: 0.85;
+                    text-shadow:
+                        0 0 4px #FFD700,
+                        0 0 10px rgba(255, 215, 0, 0.8);
+                }
+                50% {
+                    opacity: 1;
+                    text-shadow:
+                        0 0 8px #FFF3B0,
+                        0 0 18px #FFD700,
+                        0 0 36px rgba(255, 215, 0, 1);
+                }
+                100% {
+                    opacity: 0.85;
+                    text-shadow:
+                        0 0 4px #FFD700,
+                        0 0 10px rgba(255, 215, 0, 0.8);
+                }
+            }
+
+        }
+        //6个奖励
+        .want{
+            z-index: 20;
+            width: 30vw;
+            height: 33vh;
+            background-color: #10a49800;
+            position: relative;
+            .one{
+                .aa {
+                     font-weight: 700;
+                }
+                position: absolute;
+                width: 3vw;
+                height: 6vh;
+                background-color: #db1a1a00;
+                top:87px;
+                left:170px;
+            }
+            .two{
+                .bb{
+                     font-weight: 700;
+                }
+                position: absolute;
+                width: 3vw;
+                height: 6vh;
+                background-color: #db1a1a00;
+                top:50px;
+                left:230px;
+            }
+            .three{
+                .cc{
+                     font-weight: 700;
+                }
+                position: absolute;
+                width: 3vw;
+                height: 6vh;
+                background-color: #db1a1a00;
+                top:87px;
+                right:170px;
+            }
+            .four{
+                .dd{
+                     font-weight: 700;
+                }
+                position: absolute;
+                width: 3vw;
+                height: 6vh;
+                background-color: #8d7a7a00;
+                bottom:87px;
+                left:170px;
+            }
+            .five{
+                .ee{
+                     font-weight: 700;
+                }
+                position: absolute;
+                width: 3vw;
+                height: 6vh;
+                background-color: #8d7a7a00;
+                bottom:50px;
+                left:230px;
+            }
+            .six{
+                .ff{
+                     font-weight: 700;
+                }
+                position: absolute;
+                width: 3vw;
+                height: 6vh;
+                background-color: #8d7a7a00;
+                bottom:87px;
+                right:170px;
+            }
+        }
+        //转盘
+        .kk{
+            z-index: 0;
+            width: 30vw;
+            height: 33vh;
+            background-color: #10a43000;
+            position: absolute;
+            //导入转盘
+            background-image: url(../img/1.png);
+            background-repeat: no-repeat; /* 不重复 */
+            background-position: center; /* 居中显示 */
+            //flex让准星中间
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            .arrow{
+            width: 5vw;
+            height: 5vh;
+            background-color: #778d5400;
+            position: absolute;
+            //导入箭头
+            background-image: url(../img/arrow.png);
+            background-repeat: no-repeat; /* 不重复 */
+            background-position: center; /* 居中显示 */
+            background-size: contain; /* 缩小完整显示 */
+            }
+            //箭头顺时针旋转-最后暂停
+            .rotate_a{animation:rotate_go_a 2s ease forwards;}
+            .rotate_b{animation:rotate_go_b 2s ease forwards;}
+            .rotate_c{animation:rotate_go_c 2s ease forwards;}
+            .rotate_d{animation:rotate_go_d 2s ease forwards;}
+            .rotate_e{animation:rotate_go_e 2s ease forwards;}
+            .rotate_f{animation:rotate_go_f 2s ease forwards;}
+
+            //旋转动画
+            @keyframes rotate_go_a {
+                from{transform: rotate(0deg);}
+                to{transform: rotate(3580deg);}
+            }
+            //旋转动画
+            @keyframes rotate_go_b {
+                from{transform: rotate(0deg);}
+                to{transform: rotate(3650deg);}
+            }
+            //旋转动画
+            @keyframes rotate_go_c {
+                from{transform: rotate(0deg);}
+                to{transform: rotate(3700deg);}
+            }
+            //旋转动画
+            @keyframes rotate_go_d {
+                from{transform: rotate(0deg);}
+                to{transform: rotate(3520deg);}
+            }
+            //旋转动画
+            @keyframes rotate_go_e {
+                from{transform: rotate(0deg);}
+                to{transform: rotate(3460deg);}
+            }
+            //旋转动画
+            @keyframes rotate_go_f {
+                from{transform: rotate(0deg);}
+                to{transform: rotate(3400deg);}
+            }
+        }
+    }
+}
